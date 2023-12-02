@@ -1,25 +1,30 @@
 import java.util.Scanner;
 public class PrimeNumbers {
-    public static void main(String[] args) {
-        Scanner scan = new Scanner(System.in);
-        int num;
-        boolean isPrime = true;
+    public static void primeNumbers ()
+    {
+        Scanner scan = new Scanner ( System.in );
+        System.out.print ( "Please enter number: " );
+        int number = scan.nextInt ();
 
-        System.out.print("Please enter number: ");
-        num = scan.nextInt();
-
-        for(int i = 2; i < num; i++){
-            if (num % i == 0) {
-                isPrime = false;
-                break;
-            }else {
-                isPrime = true;
+        int counter = 0;
+        for (int i = 2; i <= number; i++)
+        {
+            if ( number % i == 0 )
+            {
+                counter++;
             }
         }
-        if (isPrime) {
-            System.out.println(num + " is prime number" );
-        }else {
-            System.out.println(num + " is not prime number!!!");
+        if ( number != 0 && number != 1 && counter == 1 )
+        {
+            System.out.println ( number + " is a Prime number." );
         }
+        else
+        {
+            System.out.println ( number + " is Not a Prime number!!!" );
+        }
+    }
+    public static void main ( String[] args )
+    {
+        primeNumbers();
     }
 }
